@@ -1,16 +1,13 @@
-# flutter_web
+# Responsive Flutter Web App
 
-A new Flutter project.
+A responsive Gökhan Karaçay portfolio that coded to make some workout on especially on Flutter-Web
+Dİ 17 August 2024 23:42
 
-## Getting Started
+## flutter_portfolio
 
-This project is a starting point for a Flutter application.
+![Large Screen](https://raw.githubusercontent.com/gokhankar/flutter_web/main/screenshots/1.png)
+![Middle Screen](https://raw.githubusercontent.com/gokhankar/flutter_web/main/screenshots/2.png)
+![Small Screen](https://raw.githubusercontent.com/gokhankar/flutter_web/main/screenshots/3.png)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Thanks to [Santos Enoque](https://github.com/Santos-Enoque) for layout ideas :)
+ 

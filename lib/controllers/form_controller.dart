@@ -139,6 +139,6 @@ class FormController extends GetxController
 
   openLinkedinPage() {
     launchInBrowser(Uri.parse(
-        "https://docs.google.com/document/d/1W9TgmiXQVEdJNf_HLLRJylJK224BlYJS/edit?usp=sharing&ouid=110831171369223298060&rtpof=true&sd=true"));
+        "https://docs.google.com/document/d/1_52yrQ1UxwN3g-KoEJwj-BULe2Miy6Xb/edit?usp=sharing&ouid=110831171369223298060&rtpof=true&sd=true"));
   }
 }
