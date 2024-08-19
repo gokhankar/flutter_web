@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web/models/artikel_model.dart';
 import 'package:flutter_tilt/flutter_tilt.dart';
+import 'package:flutter/foundation.dart';
 
 class AnimationCard extends StatefulWidget {
   const AnimationCard(this.artikel, this.width, {super.key});
@@ -59,6 +60,14 @@ class _AnimationCardState extends State<AnimationCard>
   @override
   Widget build(BuildContext context) {
     // print(widget.width);
+    // bool isIOS = Theme.of(context).platform == TargetPlatform.iOS;
+    // bool isAndroid = Theme.of(context).platform == TargetPlatform.android;
+    // isHover = isIOS
+    //     ? true
+    //     : isAndroid
+    //         ? true
+    //         : false;
+
     return Listener(
       onPointerDown: (_) {
         if (isHover) return;

@@ -37,7 +37,7 @@ class ProjectsController extends GetxController {
 
   var flutterProjects = [
     Artikel(
-        title: "TherapyApp",
+        title: "Therapy",
         type: "Application",
         art: "Flutter",
         info:

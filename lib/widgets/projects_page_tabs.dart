@@ -94,120 +94,123 @@ class ProjectsPageTabs extends StatelessWidget {
                                                                 FontWeight
                                                                     .bold),
                                                         title: item.title!,
-                                                        content: Container(
-                                                          height: height - 200,
-                                                          child:
-                                                              SingleChildScrollView(
-                                                            child: Column(
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .center,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: const EdgeInsets
-                                                                      .symmetric(
-                                                                      vertical:
-                                                                          10,
-                                                                      horizontal:
-                                                                          10),
-                                                                  child:
-                                                                      ClipRRect(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            20.0),
-                                                                    child: Image
-                                                                        .asset(
-                                                                      item.image!,
-                                                                      filterQuality:
-                                                                          FilterQuality
-                                                                              .high,
-                                                                      width: height >
-                                                                              800
-                                                                          ? 360.0
-                                                                          : 200,
+                                                        content: ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      20.0),
+                                                          child: Container(
+                                                            color: cLightMid,
+                                                            height:
+                                                                height - 200,
+                                                            child:
+                                                                SingleChildScrollView(
+                                                              child: Column(
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .center,
+                                                                children: [
+                                                                  Padding(
+                                                                    padding: const EdgeInsets
+                                                                        .symmetric(
+                                                                        vertical:
+                                                                            10,
+                                                                        horizontal:
+                                                                            10),
+                                                                    child:
+                                                                        ClipRRect(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              20.0),
+                                                                      child: Image
+                                                                          .asset(
+                                                                        item.image!,
+                                                                        filterQuality:
+                                                                            FilterQuality.high,
+                                                                        width: height >
+                                                                                800
+                                                                            ? 360.0
+                                                                            : 200,
+                                                                      ),
                                                                     ),
                                                                   ),
-                                                                ),
-                                                                Padding(
-                                                                  padding:
-                                                                      const EdgeInsets
-                                                                          .all(
-                                                                          10.0),
-                                                                  child: Text(
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    item.art!,
-                                                                    style: TextStyle(
-                                                                        fontSize:
-                                                                            20,
-                                                                        fontWeight:
-                                                                            FontWeight.bold),
+                                                                  Padding(
+                                                                    padding:
+                                                                        const EdgeInsets
+                                                                            .all(
+                                                                            10.0),
+                                                                    child: Text(
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      item.art!,
+                                                                      style: TextStyle(
+                                                                          fontSize:
+                                                                              20,
+                                                                          fontWeight:
+                                                                              FontWeight.bold),
+                                                                    ),
                                                                   ),
-                                                                ),
-                                                                Padding(
-                                                                  padding: const EdgeInsets
-                                                                      .symmetric(
-                                                                      horizontal:
-                                                                          20.0,
-                                                                      vertical:
-                                                                          10),
-                                                                  child: Text(
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    item.info!,
+                                                                  Padding(
+                                                                    padding: const EdgeInsets
+                                                                        .symmetric(
+                                                                        horizontal:
+                                                                            20.0,
+                                                                        vertical:
+                                                                            10),
+                                                                    child: Text(
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      item.info!,
+                                                                    ),
                                                                   ),
-                                                                ),
-                                                                Row(
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .center,
-                                                                  children: [
-                                                                    // IconButton(onPressed: (){}, icon: Icon(Icons.goog))
-                                                                    item.link !=
-                                                                            null
-                                                                        ? item.link !=
-                                                                                ""
-                                                                            ? Padding(
-                                                                                padding: const EdgeInsets.all(20.0),
-                                                                                child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.link)), icon: const FaIcon(FontAwesomeIcons.globe)),
-                                                                              )
-                                                                            : const SizedBox()
-                                                                        : const SizedBox(),
-                                                                    item.pstore !=
-                                                                            null
-                                                                        ? item.pstore !=
-                                                                                ""
-                                                                            ? Padding(
-                                                                                padding: const EdgeInsets.all(20.0),
-                                                                                child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.pstore)), icon: const FaIcon(FontAwesomeIcons.googlePlay)),
-                                                                              )
-                                                                            : const SizedBox()
-                                                                        : const SizedBox(),
-                                                                    item.appstore !=
-                                                                            null
-                                                                        ? item.appstore !=
-                                                                                ""
-                                                                            ? Padding(
-                                                                                padding: const EdgeInsets.all(20.0),
-                                                                                child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.appstore)), icon: const FaIcon(FontAwesomeIcons.appStoreIos)),
-                                                                              )
-                                                                            : const SizedBox()
-                                                                        : const SizedBox(),
-                                                                    item.github !=
-                                                                            null
-                                                                        ? item.github !=
-                                                                                ""
-                                                                            ? Padding(
-                                                                                padding: const EdgeInsets.all(20.0),
-                                                                                child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.github!)), icon: const FaIcon(FontAwesomeIcons.github)),
-                                                                              )
-                                                                            : const SizedBox()
-                                                                        : const SizedBox(),
-                                                                  ],
-                                                                ),
-                                                              ],
+                                                                  Row(
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      // IconButton(onPressed: (){}, icon: Icon(Icons.goog))
+                                                                      item.link !=
+                                                                              null
+                                                                          ? item.link != ""
+                                                                              ? Padding(
+                                                                                  padding: const EdgeInsets.all(20.0),
+                                                                                  child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.link)), icon: const FaIcon(FontAwesomeIcons.globe)),
+                                                                                )
+                                                                              : const SizedBox()
+                                                                          : const SizedBox(),
+                                                                      item.pstore !=
+                                                                              null
+                                                                          ? item.pstore != ""
+                                                                              ? Padding(
+                                                                                  padding: const EdgeInsets.all(20.0),
+                                                                                  child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.pstore)), icon: const FaIcon(FontAwesomeIcons.googlePlay)),
+                                                                                )
+                                                                              : const SizedBox()
+                                                                          : const SizedBox(),
+                                                                      item.appstore !=
+                                                                              null
+                                                                          ? item.appstore != ""
+                                                                              ? Padding(
+                                                                                  padding: const EdgeInsets.all(20.0),
+                                                                                  child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.appstore)), icon: const FaIcon(FontAwesomeIcons.appStoreIos)),
+                                                                                )
+                                                                              : const SizedBox()
+                                                                          : const SizedBox(),
+                                                                      item.github !=
+                                                                              null
+                                                                          ? item.github != ""
+                                                                              ? Padding(
+                                                                                  padding: const EdgeInsets.all(20.0),
+                                                                                  child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.github!)), icon: const FaIcon(FontAwesomeIcons.github)),
+                                                                                )
+                                                                              : const SizedBox()
+                                                                          : const SizedBox(),
+                                                                    ],
+                                                                  ),
+                                                                ],
+                                                              ),
                                                             ),
                                                           ),
                                                         ))
@@ -292,120 +295,123 @@ class ProjectsPageTabs extends StatelessWidget {
                                                                 FontWeight
                                                                     .bold),
                                                         title: item.title!,
-                                                        content: Container(
-                                                          height: height - 200,
-                                                          child:
-                                                              SingleChildScrollView(
-                                                            child: Column(
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .center,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: const EdgeInsets
-                                                                      .symmetric(
-                                                                      vertical:
-                                                                          10,
-                                                                      horizontal:
-                                                                          10),
-                                                                  child:
-                                                                      ClipRRect(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            20.0),
-                                                                    child: Image
-                                                                        .asset(
-                                                                      item.image!,
-                                                                      filterQuality:
-                                                                          FilterQuality
-                                                                              .high,
-                                                                      width: height >
-                                                                              800
-                                                                          ? 360.0
-                                                                          : 200,
+                                                        content: ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      20.0),
+                                                          child: Container(
+                                                            color: cLightMid,
+                                                            height:
+                                                                height - 200,
+                                                            child:
+                                                                SingleChildScrollView(
+                                                              child: Column(
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .center,
+                                                                children: [
+                                                                  Padding(
+                                                                    padding: const EdgeInsets
+                                                                        .symmetric(
+                                                                        vertical:
+                                                                            10,
+                                                                        horizontal:
+                                                                            10),
+                                                                    child:
+                                                                        ClipRRect(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              20.0),
+                                                                      child: Image
+                                                                          .asset(
+                                                                        item.image!,
+                                                                        filterQuality:
+                                                                            FilterQuality.high,
+                                                                        width: height >
+                                                                                800
+                                                                            ? 360.0
+                                                                            : 200,
+                                                                      ),
                                                                     ),
                                                                   ),
-                                                                ),
-                                                                Padding(
-                                                                  padding:
-                                                                      const EdgeInsets
-                                                                          .all(
-                                                                          10.0),
-                                                                  child: Text(
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    item.art!,
-                                                                    style: TextStyle(
-                                                                        fontSize:
-                                                                            20,
-                                                                        fontWeight:
-                                                                            FontWeight.bold),
+                                                                  Padding(
+                                                                    padding:
+                                                                        const EdgeInsets
+                                                                            .all(
+                                                                            10.0),
+                                                                    child: Text(
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      item.art!,
+                                                                      style: TextStyle(
+                                                                          fontSize:
+                                                                              20,
+                                                                          fontWeight:
+                                                                              FontWeight.bold),
+                                                                    ),
                                                                   ),
-                                                                ),
-                                                                Padding(
-                                                                  padding: const EdgeInsets
-                                                                      .symmetric(
-                                                                      horizontal:
-                                                                          20.0,
-                                                                      vertical:
-                                                                          10),
-                                                                  child: Text(
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    item.info!,
+                                                                  Padding(
+                                                                    padding: const EdgeInsets
+                                                                        .symmetric(
+                                                                        horizontal:
+                                                                            20.0,
+                                                                        vertical:
+                                                                            10),
+                                                                    child: Text(
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      item.info!,
+                                                                    ),
                                                                   ),
-                                                                ),
-                                                                Row(
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .center,
-                                                                  children: [
-                                                                    // IconButton(onPressed: (){}, icon: Icon(Icons.goog))
-                                                                    item.link !=
-                                                                            null
-                                                                        ? item.link !=
-                                                                                ""
-                                                                            ? Padding(
-                                                                                padding: const EdgeInsets.all(20.0),
-                                                                                child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.link)), icon: const FaIcon(FontAwesomeIcons.globe)),
-                                                                              )
-                                                                            : const SizedBox()
-                                                                        : const SizedBox(),
-                                                                    item.pstore !=
-                                                                            null
-                                                                        ? item.pstore !=
-                                                                                ""
-                                                                            ? Padding(
-                                                                                padding: const EdgeInsets.all(20.0),
-                                                                                child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.pstore)), icon: const FaIcon(FontAwesomeIcons.googlePlay)),
-                                                                              )
-                                                                            : const SizedBox()
-                                                                        : const SizedBox(),
-                                                                    item.appstore !=
-                                                                            null
-                                                                        ? item.appstore !=
-                                                                                ""
-                                                                            ? Padding(
-                                                                                padding: const EdgeInsets.all(20.0),
-                                                                                child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.appstore)), icon: const FaIcon(FontAwesomeIcons.appStoreIos)),
-                                                                              )
-                                                                            : const SizedBox()
-                                                                        : const SizedBox(),
-                                                                    item.github !=
-                                                                            null
-                                                                        ? item.github !=
-                                                                                ""
-                                                                            ? Padding(
-                                                                                padding: const EdgeInsets.all(20.0),
-                                                                                child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.github!)), icon: const FaIcon(FontAwesomeIcons.github)),
-                                                                              )
-                                                                            : const SizedBox()
-                                                                        : const SizedBox(),
-                                                                  ],
-                                                                ),
-                                                              ],
+                                                                  Row(
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      // IconButton(onPressed: (){}, icon: Icon(Icons.goog))
+                                                                      item.link !=
+                                                                              null
+                                                                          ? item.link != ""
+                                                                              ? Padding(
+                                                                                  padding: const EdgeInsets.all(20.0),
+                                                                                  child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.link)), icon: const FaIcon(FontAwesomeIcons.globe)),
+                                                                                )
+                                                                              : const SizedBox()
+                                                                          : const SizedBox(),
+                                                                      item.pstore !=
+                                                                              null
+                                                                          ? item.pstore != ""
+                                                                              ? Padding(
+                                                                                  padding: const EdgeInsets.all(20.0),
+                                                                                  child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.pstore)), icon: const FaIcon(FontAwesomeIcons.googlePlay)),
+                                                                                )
+                                                                              : const SizedBox()
+                                                                          : const SizedBox(),
+                                                                      item.appstore !=
+                                                                              null
+                                                                          ? item.appstore != ""
+                                                                              ? Padding(
+                                                                                  padding: const EdgeInsets.all(20.0),
+                                                                                  child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.appstore)), icon: const FaIcon(FontAwesomeIcons.appStoreIos)),
+                                                                                )
+                                                                              : const SizedBox()
+                                                                          : const SizedBox(),
+                                                                      item.github !=
+                                                                              null
+                                                                          ? item.github != ""
+                                                                              ? Padding(
+                                                                                  padding: const EdgeInsets.all(20.0),
+                                                                                  child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.github!)), icon: const FaIcon(FontAwesomeIcons.github)),
+                                                                                )
+                                                                              : const SizedBox()
+                                                                          : const SizedBox(),
+                                                                    ],
+                                                                  ),
+                                                                ],
+                                                              ),
                                                             ),
                                                           ),
                                                         ))
@@ -457,7 +463,178 @@ class ProjectsPageTabs extends StatelessWidget {
                                                                 FontWeight
                                                                     .bold),
                                                         title: item.title!,
-                                                        content: Container(
+                                                        content: ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      20.0),
+                                                          child: Container(
+                                                            color: cLightMid,
+                                                            height:
+                                                                height - 200,
+                                                            child:
+                                                                SingleChildScrollView(
+                                                              child: Column(
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .center,
+                                                                children: [
+                                                                  Padding(
+                                                                    padding: const EdgeInsets
+                                                                        .symmetric(
+                                                                        vertical:
+                                                                            10,
+                                                                        horizontal:
+                                                                            10),
+                                                                    child:
+                                                                        ClipRRect(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              20.0),
+                                                                      child: Image
+                                                                          .asset(
+                                                                        item.image!,
+                                                                        filterQuality:
+                                                                            FilterQuality.high,
+                                                                        width: height >
+                                                                                800
+                                                                            ? 360.0
+                                                                            : 200,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  Padding(
+                                                                    padding:
+                                                                        const EdgeInsets
+                                                                            .all(
+                                                                            10.0),
+                                                                    child: Text(
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      item.art!,
+                                                                      style: TextStyle(
+                                                                          fontSize:
+                                                                              20,
+                                                                          fontWeight:
+                                                                              FontWeight.bold),
+                                                                    ),
+                                                                  ),
+                                                                  Padding(
+                                                                    padding: const EdgeInsets
+                                                                        .symmetric(
+                                                                        horizontal:
+                                                                            20.0,
+                                                                        vertical:
+                                                                            10),
+                                                                    child: Text(
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      item.info!,
+                                                                    ),
+                                                                  ),
+                                                                  Row(
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      // IconButton(onPressed: (){}, icon: Icon(Icons.goog))
+                                                                      item.link !=
+                                                                              null
+                                                                          ? item.link != ""
+                                                                              ? Padding(
+                                                                                  padding: const EdgeInsets.all(20.0),
+                                                                                  child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.link)), icon: const FaIcon(FontAwesomeIcons.globe)),
+                                                                                )
+                                                                              : const SizedBox()
+                                                                          : const SizedBox(),
+                                                                      item.pstore !=
+                                                                              null
+                                                                          ? item.pstore != ""
+                                                                              ? Padding(
+                                                                                  padding: const EdgeInsets.all(20.0),
+                                                                                  child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.pstore)), icon: const FaIcon(FontAwesomeIcons.googlePlay)),
+                                                                                )
+                                                                              : const SizedBox()
+                                                                          : const SizedBox(),
+                                                                      item.appstore !=
+                                                                              null
+                                                                          ? item.appstore != ""
+                                                                              ? Padding(
+                                                                                  padding: const EdgeInsets.all(20.0),
+                                                                                  child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.appstore)), icon: const FaIcon(FontAwesomeIcons.appStoreIos)),
+                                                                                )
+                                                                              : const SizedBox()
+                                                                          : const SizedBox(),
+                                                                      item.github !=
+                                                                              null
+                                                                          ? item.github != ""
+                                                                              ? Padding(
+                                                                                  padding: const EdgeInsets.all(20.0),
+                                                                                  child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.github!)), icon: const FaIcon(FontAwesomeIcons.github)),
+                                                                                )
+                                                                              : const SizedBox()
+                                                                          : const SizedBox(),
+                                                                    ],
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ))
+                                                  },
+                                              child:
+                                                  AnimationCard(item, width)),
+                                        ))
+                                    .toList(),
+                              ),
+                              const SizedBox(
+                                height: 50,
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    SingleChildScrollView(
+                      child: Container(
+                        width: width - 100,
+                        child: Column(
+                          children: [
+                            GridView(
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: width >= 900
+                                    ? 4
+                                    : (900 > width && width >= 600)
+                                        ? 3
+                                        : (600 > width && width >= 400)
+                                            ? 2
+                                            : 1,
+                              ),
+                              shrinkWrap: true,
+                              children: projectsController.pythonProjects
+                                  .map((item) => Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: InkWell(
+                                            onTap: () => {
+                                                  Get.defaultDialog(
+                                                      textCancel: "Close",
+                                                      titlePadding:
+                                                          EdgeInsets.fromLTRB(
+                                                              10, 30, 10, 10),
+                                                      titleStyle: TextStyle(
+                                                          fontSize: 30,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                      title: item.title!,
+                                                      content: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(20.0),
+                                                        child: Container(
+                                                          color: cLightMid,
                                                           height: height - 200,
                                                           child:
                                                               SingleChildScrollView(
@@ -572,170 +749,6 @@ class ProjectsPageTabs extends StatelessWidget {
                                                                 ),
                                                               ],
                                                             ),
-                                                          ),
-                                                        ))
-                                                  },
-                                              child:
-                                                  AnimationCard(item, width)),
-                                        ))
-                                    .toList(),
-                              ),
-                              const SizedBox(
-                                height: 50,
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    SingleChildScrollView(
-                      child: Container(
-                        width: width - 100,
-                        child: Column(
-                          children: [
-                            GridView(
-                              gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: width >= 900
-                                    ? 4
-                                    : (900 > width && width >= 600)
-                                        ? 3
-                                        : (600 > width && width >= 400)
-                                            ? 2
-                                            : 1,
-                              ),
-                              shrinkWrap: true,
-                              children: projectsController.pythonProjects
-                                  .map((item) => Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: InkWell(
-                                            onTap: () => {
-                                                  Get.defaultDialog(
-                                                      textCancel: "Close",
-                                                      titlePadding:
-                                                          EdgeInsets.fromLTRB(
-                                                              10, 30, 10, 10),
-                                                      titleStyle: TextStyle(
-                                                          fontSize: 30,
-                                                          fontWeight:
-                                                              FontWeight.bold),
-                                                      title: item.title!,
-                                                      content: Container(
-                                                        height: height - 200,
-                                                        child:
-                                                            SingleChildScrollView(
-                                                          child: Column(
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Padding(
-                                                                padding: const EdgeInsets
-                                                                    .symmetric(
-                                                                    vertical:
-                                                                        10,
-                                                                    horizontal:
-                                                                        10),
-                                                                child:
-                                                                    ClipRRect(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              20.0),
-                                                                  child: Image
-                                                                      .asset(
-                                                                    item.image!,
-                                                                    filterQuality:
-                                                                        FilterQuality
-                                                                            .high,
-                                                                    width: height >
-                                                                            800
-                                                                        ? 360.0
-                                                                        : 200,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    const EdgeInsets
-                                                                        .all(
-                                                                        10.0),
-                                                                child: Text(
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  item.art!,
-                                                                  style: TextStyle(
-                                                                      fontSize:
-                                                                          20,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold),
-                                                                ),
-                                                              ),
-                                                              Padding(
-                                                                padding: const EdgeInsets
-                                                                    .symmetric(
-                                                                    horizontal:
-                                                                        20.0,
-                                                                    vertical:
-                                                                        10),
-                                                                child: Text(
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  item.info!,
-                                                                ),
-                                                              ),
-                                                              Row(
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .center,
-                                                                children: [
-                                                                  // IconButton(onPressed: (){}, icon: Icon(Icons.goog))
-                                                                  item.link !=
-                                                                          null
-                                                                      ? item.link !=
-                                                                              ""
-                                                                          ? Padding(
-                                                                              padding: const EdgeInsets.all(20.0),
-                                                                              child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.link)), icon: const FaIcon(FontAwesomeIcons.globe)),
-                                                                            )
-                                                                          : const SizedBox()
-                                                                      : const SizedBox(),
-                                                                  item.pstore !=
-                                                                          null
-                                                                      ? item.pstore !=
-                                                                              ""
-                                                                          ? Padding(
-                                                                              padding: const EdgeInsets.all(20.0),
-                                                                              child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.pstore)), icon: const FaIcon(FontAwesomeIcons.googlePlay)),
-                                                                            )
-                                                                          : const SizedBox()
-                                                                      : const SizedBox(),
-                                                                  item.appstore !=
-                                                                          null
-                                                                      ? item.appstore !=
-                                                                              ""
-                                                                          ? Padding(
-                                                                              padding: const EdgeInsets.all(20.0),
-                                                                              child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.appstore)), icon: const FaIcon(FontAwesomeIcons.appStoreIos)),
-                                                                            )
-                                                                          : const SizedBox()
-                                                                      : const SizedBox(),
-                                                                  item.github !=
-                                                                          null
-                                                                      ? item.github !=
-                                                                              ""
-                                                                          ? Padding(
-                                                                              padding: const EdgeInsets.all(20.0),
-                                                                              child: IconButton(onPressed: () => _launchInBrowser(Uri.parse(item.github!)), icon: const FaIcon(FontAwesomeIcons.github)),
-                                                                            )
-                                                                          : const SizedBox()
-                                                                      : const SizedBox(),
-                                                                ],
-                                                              ),
-                                                            ],
                                                           ),
                                                         ),
                                                       ))
