@@ -96,7 +96,7 @@ class AboutPage extends StatelessWidget {
                       SizedBox(height: 20),
                       MyTextWidget(
                         text:
-                            "A passionate developer interested in building the best applications in the mobile environment.\n\nFor over 4 years, I’ve been developing web applications, and for 2 years I have been in the mobile application market. \n\nWhen I’m not on the job, I love mercilessly killing my time with my familysons, walking in nature, and indulging my love for seeing new places.",
+                            "A passionate developer interested in building the best applications in the mobile environment.\n\nFor over 4 years, I’ve been developing web applications, and for 2 years I have been in the mobile application market. \n\nWhen I’m not on the job, I love mercilessly killing my time with my family, walking in nature, and indulging my love for seeing new places.",
                         size: 14,
                         color: cTextLight,
                         fontWeight: FontWeight.w300,
