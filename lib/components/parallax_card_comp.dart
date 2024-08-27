@@ -60,14 +60,11 @@ class _AnimationCardState extends State<AnimationCard>
   @override
   Widget build(BuildContext context) {
     // print(widget.width);
-    // bool isIOS = Theme.of(context).platform == TargetPlatform.iOS;
-    // bool isAndroid = Theme.of(context).platform == TargetPlatform.android;
-    // isHover = isIOS
-    //     ? true
-    //     : isAndroid
-    //         ? true
-    //         : false;
 
+    if ((defaultTargetPlatform == TargetPlatform.android) ||
+        (defaultTargetPlatform == TargetPlatform.iOS)) {
+      scaleAnimationController.forward();
+    }
     return Listener(
       onPointerDown: (_) {
         if (isHover) return;
