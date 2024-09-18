@@ -65,130 +65,133 @@ class _AnimationCardState extends State<AnimationCard>
         (defaultTargetPlatform == TargetPlatform.iOS)) {
       scaleAnimationController.forward();
     }
-    return Listener(
-      onPointerDown: (_) {
-        if (isHover) return;
-        scaleAnimationController.forward();
-      },
-      onPointerUp: (_) {
-        if (isHover) return;
-        scaleAnimationController.reverse();
-      },
-      onPointerCancel: (_) {
-        if (isHover) return;
-        scaleAnimationController.reverse();
-      },
-      child: MouseRegion(
-        cursor: SystemMouseCursors.click,
-        onEnter: (_) {
-          isHover = true;
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      child: Listener(
+        onPointerDown: (_) {
+          if (isHover) return;
           scaleAnimationController.forward();
         },
-        onExit: (_) {
-          isHover = true;
+        onPointerUp: (_) {
+          if (isHover) return;
           scaleAnimationController.reverse();
         },
-        // Tilt here
-        child: Tilt(
-          borderRadius: BorderRadius.circular(24),
-          tiltConfig: const TiltConfig(
-            angle: 6.0,
-            enableReverse: true,
-            enableOutsideAreaMove: false,
-            leaveDuration: Duration(milliseconds: 600),
-            filterQuality: FilterQuality.high,
-          ),
-          lightConfig: const LightConfig(disable: true),
-          shadowConfig: const ShadowConfig(enableReverse: true),
-          childLayout: ChildLayout(
-            inner: [
-              ScaleTransition(
-                scale: scaleAnimation,
-                alignment: Alignment.center,
-                filterQuality: FilterQuality.high,
-                child: TiltParallax(
-                  child: Image.asset(
-                    widget.artikel.image!,
-                    filterQuality: FilterQuality.high,
-                    width: 360.0,
+        onPointerCancel: (_) {
+          if (isHover) return;
+          scaleAnimationController.reverse();
+        },
+        child: MouseRegion(
+          cursor: SystemMouseCursors.click,
+          onEnter: (_) {
+            isHover = true;
+            scaleAnimationController.forward();
+          },
+          onExit: (_) {
+            isHover = true;
+            scaleAnimationController.reverse();
+          },
+          // Tilt here
+          child: Tilt(
+            borderRadius: BorderRadius.circular(24),
+            tiltConfig: const TiltConfig(
+              angle: 6.0,
+              enableReverse: true,
+              enableOutsideAreaMove: false,
+              leaveDuration: Duration(milliseconds: 600),
+              filterQuality: FilterQuality.high,
+            ),
+            lightConfig: const LightConfig(disable: true),
+            shadowConfig: const ShadowConfig(enableReverse: true),
+            childLayout: ChildLayout(
+              inner: [
+                ScaleTransition(
+                  scale: scaleAnimation,
+                  alignment: Alignment.center,
+                  filterQuality: FilterQuality.high,
+                  child: TiltParallax(
+                    child: Image.asset(
+                      widget.artikel.image!,
+                      filterQuality: FilterQuality.high,
+                      width: 360.0,
+                    ),
                   ),
                 ),
-              ),
-              Positioned.fill(
-                child: AnimatedOpacity(
-                  opacity: opacity,
-                  duration: const Duration(milliseconds: 600),
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [Colors.black12, Colors.black87],
+                Positioned.fill(
+                  child: AnimatedOpacity(
+                    opacity: opacity,
+                    duration: const Duration(milliseconds: 600),
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [Colors.black12, Colors.black87],
+                        ),
                       ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 28,
-                        vertical: 20,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                            widget.artikel.type!,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: widget.width! > 750
-                                  ? 20
-                                  : widget.width! > 600
-                                      ? 13
-                                      : widget.width! > 540
-                                          ? 20
-                                          : 13,
-                            ),
-                          ),
-                          Text(
-                            widget.artikel.title!,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: widget.width! > 750
-                                  ? 40
-                                  : widget.width! > 600
-                                      ? 15
-                                      : widget.width! > 540
-                                          ? 50
-                                          : 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(height: 12),
-                          Align(
-                            alignment: Alignment.centerRight,
-                            child: Text(
-                              widget.artikel.art!,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 28,
+                          vertical: 20,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text(
+                              widget.artikel.type!,
                               style: TextStyle(
-                                color: Colors.white60,
+                                color: Colors.white,
                                 fontSize: widget.width! > 750
-                                    ? 14
+                                    ? 20
                                     : widget.width! > 600
-                                        ? 10
+                                        ? 13
                                         : widget.width! > 540
-                                            ? 14.0
-                                            : 10,
+                                            ? 20
+                                            : 13,
+                              ),
+                            ),
+                            Text(
+                              widget.artikel.title!,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: widget.width! > 750
+                                    ? 40
+                                    : widget.width! > 600
+                                        ? 15
+                                        : widget.width! > 540
+                                            ? 50
+                                            : 15,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                          ),
-                        ],
+                            const SizedBox(height: 12),
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: Text(
+                                widget.artikel.art!,
+                                style: TextStyle(
+                                  color: Colors.white60,
+                                  fontSize: widget.width! > 750
+                                      ? 14
+                                      : widget.width! > 600
+                                          ? 10
+                                          : widget.width! > 540
+                                              ? 14.0
+                                              : 10,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
+            child: const SizedBox(),
           ),
-          child: const SizedBox(),
         ),
       ),
     );

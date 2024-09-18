@@ -37,11 +37,23 @@ class ProjectsController extends GetxController {
 
   var flutterProjects = [
     Artikel(
+        title: "Palmistry",
+        type: "Application",
+        art: "Flutter",
+        info:
+            "This application is an entertainment application written to showcase my Flutter Full Stack and programming skills. Flutter was used entirely for FrontEnd-UI development, and all the stages from graphic design to coding, debugging, testing, uploading to stores and management were made by me. \n \nStrapi-JavaScript backend installed on a Linux machine was used in the backend. The analysis and marking of the images were done with Python Tensorflow. The analysis made with a microservice was added as data in the JavaScript backend. This data was again interpreted with Flutter and printed to the screen as a palm review. Again, the Python Watchdog package was used for image tracking operations on the server. In addition, advertising and in-app purchase features were used in the application.  And the animations with Rive were created by me. \n\nI have listed the packages used in Flutter below.\n\nState Management: get, Persistence: get_storage \nAPI Management: dio, \nLaunching: url_launcher,\nCamera: camera, image_picker, image_cropper, \nSplash: flutter_native_splash,\nFonting: Google Fonts,\nAnimating: Rive,\nAudio: Audioplayer,\nAds: google_mobile_ads and Admob,\nPurchase: in_app_purchase",
+        link: "",
+        appstore: null,
+        pstore:
+            "https://play.google.com/store/apps/details?id=com.ahbapps.palmistry",
+        github: null,
+        image: "assets/images/pal.png"),
+    Artikel(
         title: "Therapy",
         type: "Application",
         art: "Flutter",
         info:
-            "A private application that includes language and cognitive development exercises for people over the age of 65 who are at risk of cognitive decline, dementia, Alzheimer's, Parkinson's, stroke patients and special education students. It is developed with Flutter. It is coded and added to Appstore and Playstore by me. I used Getx as state management in this project. ",
+            "A private application that includes language and cognitive development exercises for people over the age of 65 who are at risk of cognitive decline, dementia, Alzheimer's, Parkinson's, stroke patients and special education students. It is developed with Flutter. It is coded and added to Appstore and Playstore by me. I used Getx as state management in this project. \n In addition, all the images and sound recordings used in this project were made by me using Figma and various sound editing applications. The application includes around 20 games for the elderly, such as Maze, Wheel of Fortune, Word Search, Picture Matching. ",
         link: "",
         appstore:
             "https://apps.apple.com/tr/app/beyin-ve-konu%C5%9Fma-terapisi/id6468934791",
